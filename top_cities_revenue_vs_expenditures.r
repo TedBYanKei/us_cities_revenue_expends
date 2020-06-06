@@ -37,10 +37,10 @@ mutate(Year = as.factor(year)) %>%
   ggplot(aes(x = Year, y = Pct_of_Total_Revenue, group = Which)) +
   geom_line(aes(col = Which), size=1.5) + 
   scale_color_manual(values = brewer.pal(8,"Set1")) + 
-  scale_y_continuous(labels = function(x) paste0(sprintf("%.0f", x*100),"%"), limits = c(0, 0.15)) + 
-  labs(y="Percentage", x = "Year", caption = "Source: US Dept of Justice - https://www.bjs.gov/") + 
+  scale_y_continuous(labels = function(x) paste0(sprintf("%.0f", x*100),"%"), limits = c(0, 0.14), breaks = seq(0, 0.14, by = 0.02)) + 
+  labs(y="Percentage", x = "Year", caption = "Source: https://www.lincolninst.edu/research-data/") + 
   theme(axis.text.x = element_text(face="bold", angle = 50, hjust = 1), 
         axis.text.y = element_text(face="bold"), 
         plot.title = element_text(size = 18, face = "bold")) +  
-  ggtitle("Expenditure as a % of Total Revenue - Top 20 US Cities (excluding New York)")
+  ggtitle("Expenditure as a % of Total Revenue - Top 20 US Cities")
 
