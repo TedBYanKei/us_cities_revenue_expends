@@ -28,7 +28,7 @@ FiSC_Data_subset <- FiSC_Data_subset %>%
   mutate(Expd_Pct_Police = round((ExpndPolice / Revenue), digits = 3)) %>% 
   mutate(Expd_Pct_Education = round((ExpndEducation / Revenue), digits = 3)) %>% 
   select(year, Expd_Pct_Police, Expd_Pct_Education) %>% 
-  pivot_longer(-year, names_to = "Which", values_to = "Pct_of_Total_Revenue")
+  pivot_longer(year, names_to = "Which", values_to = "Pct_of_Total_Revenue")
 str(FiSC_Data_subset)
 
 #, breaks = seq(0, 0.14, by = 0.02)
